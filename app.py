@@ -240,7 +240,7 @@ if "Limited Edition" in excl_filter:   dff = dff[dff["limited_edition"]==1]
 # ═══════════════════════════════════════════════════════════
 # PAGE: OVERVIEW
 # ═══════════════════════════════════════════════════════════
-if page == " Overview":
+if page == "Overview":
     st.markdown("""
     <div style='padding: 30px 0 20px;'>
         <div class='hero-title'>SEPHORA<br>BEAUTY ANALYTICS</div>
