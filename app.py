@@ -1,6 +1,7 @@
 """
 app.py — Sephora Products & Skincare Dashboard
 Tema: Luxury Beauty — Dark Glamour with Rose Gold accents
+
 """
 
 import streamlit as st
