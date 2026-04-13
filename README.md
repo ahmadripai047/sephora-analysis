@@ -90,13 +90,13 @@ Dashboard menggunakan tema **Luxury Dark Beauty** dengan aksen Rose Gold — ter
 
 ## Key Findings
 
-<<<<<<< HEAD
 1. **Skincare (28.5%)** dan **Makeup (27.9%)** mendominasi katalog Sephora
 2. **Median harga $35** menandakan mayoritas produk di segmen Mid ($25–50)
 3. **Rata-rata rating 4.19/5** menunjukkan kualitas produk secara keseluruhan sangat tinggi
 4. **Vegan (31%)** dan **Cruelty-Free (21%)** adalah klaim paling populer, tren ethical beauty
 5. **Harga tidak berkorelasi** dengan rating (r ≈ 0.04)
 6. Brand **SEPHORA COLLECTION** memiliki produk terbanyak (352 produk)
+
 =======
 ### 1. Harga Bukan Penentu Kualitas
 > **Korelasi harga vs rating hampir nol (r ≈ 0.04)**
@@ -127,7 +127,6 @@ Dari 2.373 produk eksklusif (28% katalog), rata-rata rating sedikit lebih tinggi
 > **43.6% produk di segmen Mid ($25–50), tapi avg loves tertinggi di Luxury**
 
 Konsumen di segmen luxury lebih engaged lebih banyak loves dan reviews per produk, meskipun volume produknya lebih sedikit.
->>>>>>> e7b658f (update app.py dan README)
 
 ---
 
