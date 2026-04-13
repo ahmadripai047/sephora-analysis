@@ -239,7 +239,7 @@ if "Limited Edition" in excl_filter:   dff = dff[dff["limited_edition"]==1]
 # ═══════════════════════════════════════════════════════════
 # PAGE: OVERVIEW
 # ═══════════════════════════════════════════════════════════
-if page == "Overview":
+if page == " Overview":
     st.markdown("""
     <div style='padding: 30px 0 20px;'>
         <div class='hero-title'>SEPHORA<br>BEAUTY ANALYTICS</div>
@@ -338,6 +338,81 @@ if page == "Overview":
     Most products cluster in the Mid ($25–50) and Budget (<$25) segments, while Ultra-Luxury products
     represent only ~2% of catalog but drive significant brand prestige.
     </div>""", unsafe_allow_html=True)
+
+    # ── Business Problem & Recommendation ──
+    st.markdown("<div class='section-title'>Business Problem</div>", unsafe_allow_html=True)
+    st.markdown("""
+    <div style='display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;'>
+        <div class='insight-box'>
+            <b style='color:#d4af37;'>Problem Statement</b><br><br>
+            Tidak semua produk Sephora sukses di pasar, mayoritas gagal menarik perhatian konsumen
+            meskipun tersedia di platform. Analisis ini menjawab:<br><br>
+            • Faktor apa yang mendorong <b>popularitas produk</b>?<br>
+            • Apakah <b>harga tinggi</b> = produk lebih disukai?<br>
+            • Klaim apa yang paling <b>relevan</b> di pasar saat ini?<br>
+            • Brand mana yang punya <b>value proposition terkuat</b>?
+        </div>
+        <div class='insight-box'>
+            <b style='color:#d4af37;'>🔍 Approach</b><br><br>
+            Analisis menggunakan <b>8.494 produk</b> dari 300+ brand di platform Sephora dengan metodologi:<br><br>
+            1. <b>Data cleaning</b> & feature engineering<br>
+            2. <b>EDA</b> distribusi, korelasi, segmentasi<br>
+            3. <b>Deep dive</b> per kategori & brand<br>
+            4. <b>Dashboard interaktif</b> untuk eksplorasi mandiri
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<div class='section-title'>📊 Key Findings</div>", unsafe_allow_html=True)
+    findings = [
+        ("Harga ≠ Kualitas", "Korelasi harga vs rating hampir nol (r ≈ 0.04). Produk budget memiliki rating setara produk luxury."),
+        ("Ethical Beauty Wajib", "Vegan (31%) & Cruelty-Free (21%) sudah jadi ekspektasi dasar, bukan diferensiasi."),
+        ("Reviews Drives Loves", "Korelasi reviews vs loves > 0.7 , winner-takes-most dynamic di platform."),
+        ("Exclusive = Edge", "Produk Sephora Exclusive rata-rata lebih tinggi ratingnya, efek kurasi, & eksklusivitas."),
+        ("Skincare = Paling Kompetitif", "28.5% katalog, tapi niche brands dengan positioning kuat mengalahkan brand besar."),
+        ("Luxury = Lebih Engaged", "Volume didominasi Mid-tier, tapi avg loves tertinggi ada di segmen Luxury ($100–200)."),
+    ]
+    cols = st.columns(3)
+    for i, (title, desc) in enumerate(findings):
+        with cols[i % 3]:
+            st.markdown(f"""
+            <div style='background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.15);
+                        border-radius:12px; padding:16px; margin-bottom:12px; min-height:110px;'>
+                <div style='color:#d4af37; font-weight:600; font-size:0.9rem; margin-bottom:6px;'>{title}</div>
+                <div style='color:#c4a882; font-size:0.82rem; line-height:1.5;'>{desc}</div>
+            </div>""", unsafe_allow_html=True)
+
+    st.markdown("<div class='section-title'>💡 Recommendations</div>", unsafe_allow_html=True)
+    recs = [
+        ("For Brand Managers", [
+            "Prioritaskan ethical certifications, bukan lagi opsional",
+            "Fokus ke product storytelling, bukan price war",
+            "Agresif di review generation pada 30 hari pertama launch",
+        ], "#d4af37"),
+        ("For Retail Strategist", [
+            "Perluas program Sephora Exclusive untuk loyalty retention",
+            "Jaga proporsi budget segment agar customer base tetap luas",
+            "Gunakan love & review data sebagai sinyal kurasi produk",
+        ], "#e8a4c9"),
+        ("For New Entrants", [
+            "Skincare: positioning niche > volume play",
+            "Luxury segment konsumennya lebih engaged & loyal",
+            "Ingredient transparency jadi daya tarik utama Gen Z",
+        ], "#7ec8c8"),
+    ]
+    rec_cols = st.columns(3)
+    for col, (title, points, color) in zip(rec_cols, recs):
+        with col:
+            bullets = "".join([f"<li style='margin-bottom:5px;'>{p}</li>" for p in points])
+            st.markdown(f"""
+            <div style='background:rgba(0,0,0,0.3); border:1px solid {color}33;
+                        border-top:3px solid {color}; border-radius:12px;
+                        padding:18px; min-height:160px;'>
+                <div style='color:{color}; font-weight:600; font-size:0.9rem;
+                            margin-bottom:10px; letter-spacing:1px;'>{title}</div>
+                <ul style='color:#c4a882; font-size:0.8rem; line-height:1.6;
+                           padding-left:16px; margin:0;'>{bullets}</ul>
+            </div>""", unsafe_allow_html=True)
 
 # ═══════════════════════════════════════════════════════════
 # PAGE: BRAND
@@ -509,7 +584,7 @@ elif page == "Price Intelligence":
 
     st.markdown("""
     <div class='insight-box'>
-    ✦ <b>Price Insight:</b> Higher price does NOT guarantee higher ratings — correlation is near zero (r ≈ 0.04).
+    ✦ <b>Price Insight:</b> Higher price does NOT guarantee higher ratings, correlation is near zero (r ≈ 0.04).
     The Mid ($25–50) segment dominates volume while Luxury products ($100–200) show slightly higher avg loves,
     suggesting premium buyers are more engaged. Value-for-money products in Budget tier punch above their weight in ratings.
     </div>""", unsafe_allow_html=True)
@@ -552,7 +627,7 @@ elif page == "Ratings & Popularity":
         st.plotly_chart(fig, use_container_width=True)
 
     # Top products
-    st.markdown("<div class='section-title'> Top 10 Most Loved Products</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-title'>Top 10 Most Loved Products</div>", unsafe_allow_html=True)
     top_loved = dff.nlargest(10, "loves_count")[
         ["product_name","brand_name","loves_count","rating","price_usd","primary_category"]
     ].reset_index(drop=True)
@@ -565,7 +640,7 @@ elif page == "Ratings & Popularity":
         "rating":"Rating","price_usd":"Price","primary_category":"Category"
     }), use_container_width=True)
 
-    st.markdown("<div class='section-title'> Top 10 Highest Rated (min 100 reviews)</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-title'>Top 10 Highest Rated (min 100 reviews)</div>", unsafe_allow_html=True)
     top_rated = (dff[dff["reviews"]>=100]
                  .nlargest(10,"rating")
                  [["product_name","brand_name","rating","reviews","price_usd","primary_category"]]
@@ -779,5 +854,5 @@ st.divider()
 st.markdown("""
 <div style='text-align:center; padding: 10px 0;
      font-size:0.72rem; color:#4a3a2a; letter-spacing:2px;'>
-✦ SEPHORA BEAUTY ANALYTICS ✦ MUHAMMAD RIFAI ✦
+✦ SEPHORA BEAUTY ANALYTICS ✦ MUHAMMAD RIFAI ✦ ANALYTIFAI ✦
 </div>""", unsafe_allow_html=True)
