@@ -99,7 +99,7 @@ seaborn     # Statistical viz (notebook)
 
 ## 👤 Author
 
-**Muhammad Rifai**
+**Muhammad Rifai, S.Stat**
 - GitHub: [@ahmadripai047](https://github.com/ahmadripai047)
 - Instagram: [@ahmadripai_](https://instagram.com/ahmadripai_)
 - LinkedIn: [in/muhammad-rifai047](https://linkedin.com/in/muhammad-rifai047)
