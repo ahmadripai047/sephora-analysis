@@ -3,7 +3,7 @@
 > **"Does price, brand, or product claims actually drive customer love in the beauty industry?"**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776ab?logo=python&logoColor=white)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Live%20Demo-ff4b4b?logo=streamlit&logoColor=white)]((https://sephora-analysis-analytifai.streamlit.app/))
+[![Streamlit](https://img.shields.io/badge/Streamlit-Live%20Demo-ff4b4b?logo=streamlit&logoColor=white)](https://sephora-analysis-analytifai.streamlit.app/)
 [![Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20beff?logo=kaggle&logoColor=white)](https://kaggle.com)
 [![Plotly](https://img.shields.io/badge/Viz-Plotly-3d4db7?logo=plotly&logoColor=white)](https://plotly.com)
 
